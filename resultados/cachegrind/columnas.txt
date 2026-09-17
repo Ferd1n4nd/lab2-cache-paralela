@@ -1,0 +1,146 @@
+--------------------------------------------------------------------------------
+-- Metadata
+--------------------------------------------------------------------------------
+Invocation:       /usr/bin/cg_annotate resultados/cachegrind/cg_columnas.out
+I1 cache:         32768 B, 64 B, 8-way associative
+D1 cache:         49152 B, 64 B, 12-way associative
+LL cache:         31457280 B, 64 B, 15-way associative
+Command:          ./bin/bucles_anidados 1024 columnas
+Events recorded:  Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Events shown:     Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Event sort order: Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Threshold:        0.1%
+Annotation:       on
+
+--------------------------------------------------------------------------------
+-- Summary
+--------------------------------------------------------------------------------
+Ir____________________ I1mr__________ ILmr__________ Dr__________________ D1mr_______________ DLmr_______________ Dw__________________ D1mw______________ DLmw______________ 
+
+1,249,449,684 (100.0%) 3,023 (100.0%) 2,784 (100.0%) 334,802,289 (100.0%) 81,674,038 (100.0%) 70,809,939 (100.0%) 151,097,130 (100.0%) 5,579,978 (100.0%) 5,248,905 (100.0%)  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+-- File:function summary
+--------------------------------------------------------------------------------
+  Ir__________________________ I1mr___________ ILmr___________ Dr________________________ D1mr_______________________ DLmr_______________________ Dw________________________ D1mw_____________________ DLmw_____________________  file:function
+
+< 1,237,210,759 (99.0%, 99.0%) 35 (1.2%, 1.2%) 28 (1.0%, 1.0%) 334,264,612 (99.8%, 99.8%) 81,660,162 (100.0%, 100.0%) 70,801,238 (100.0%, 100.0%) 144,842,526 (95.9%, 95.9%) 2,786,272 (49.9%,  49.9%) 2,621,866 (50.0%,  50.0%)  /home/ferdinand/paralela/lab2/src/bucles_anidados.cpp:
+    534,958,440 (42.8%)         2 (0.1%)        2 (0.1%)       200,540,268 (59.9%)        66,996,537  (82.0%)         62,934,621  (88.9%)          66,846,804 (44.2%)               12  (0.0%)                 6  (0.0%)            porColumnas(std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> >&, int)
+    468,088,596 (37.5%)         3 (0.1%)        3 (0.1%)       133,716,564 (39.9%)        14,663,608  (18.0%)          7,866,609  (11.1%)          66,846,804 (44.2%)               12  (0.0%)                 6  (0.0%)            porFilas(std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> >&, int)
+    234,163,328 (18.7%)        19 (0.6%)       15 (0.5%)             7,712  (0.0%)                13   (0.0%)                  6   (0.0%)          11,148,820  (7.4%)        2,786,244 (49.9%)         2,621,852 (50.0%)            inicializar(std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, int)
+
+<    10,240,984  (0.8%, 99.8%) 13 (0.4%, 1.6%)  8 (0.3%, 1.3%)         133  (0.0%, 99.8%)         68   (0.0%, 100.0%)         32   (0.0%, 100.0%)   6,062,086  (4.0%, 99.9%) 2,791,058 (50.0%, 100.0%) 2,625,307 (50.0%, 100.0%)  ./string/../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S:__memset_avx2_unaligned_erms
+
+--------------------------------------------------------------------------------
+-- Function:file summary
+--------------------------------------------------------------------------------
+  Ir________________________ I1mr___________ ILmr___________ Dr________________________ D1mr______________________ DLmr______________________ Dw_______________________ D1mw_____________________ DLmw_____________________  function:file
+
+> 534,958,572 (42.8%, 42.8%)  3 (0.1%, 0.1%)  3 (0.1%, 0.1%) 200,540,304 (59.9%, 59.9%) 66,996,561 (82.0%,  82.0%) 62,934,633 (88.9%,  88.9%) 66,846,816 (44.2%, 44.2%)        12  (0.0%,   0.0%)         6  (0.0%,   0.0%)  porColumnas(std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> >&, int):
+  534,958,440 (42.8%)         2 (0.1%)        2 (0.1%)       200,540,268 (59.9%)        66,996,537 (82.0%)         62,934,621 (88.9%)         66,846,804 (44.2%)               12  (0.0%)                 6  (0.0%)            /home/ferdinand/paralela/lab2/src/bucles_anidados.cpp
+
+> 468,088,776 (37.5%, 80.3%)  8 (0.3%, 0.4%)  7 (0.3%, 0.4%) 133,716,624 (39.9%, 99.8%) 14,663,644 (18.0%, 100.0%)  7,866,627 (11.1%, 100.0%) 66,846,816 (44.2%, 88.5%)        12  (0.0%,   0.0%)         6  (0.0%,   0.0%)  porFilas(std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> >&, int):
+  468,088,596 (37.5%)         3 (0.1%)        3 (0.1%)       133,716,564 (39.9%)        14,663,608 (18.0%)          7,866,609 (11.1%)         66,846,804 (44.2%)               12  (0.0%)                 6  (0.0%)            /home/ferdinand/paralela/lab2/src/bucles_anidados.cpp
+
+> 234,163,348 (18.7%, 99.0%) 19 (0.6%, 1.0%) 15 (0.5%, 0.9%)       7,716  (0.0%, 99.8%)         13  (0.0%, 100.0%)          6  (0.0%, 100.0%) 11,148,820  (7.4%, 95.9%) 2,786,244 (49.9%,  49.9%) 2,621,852 (50.0%,  50.0%)  inicializar(std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, int):
+  234,163,328 (18.7%)        19 (0.6%)       15 (0.5%)             7,712  (0.0%)                13  (0.0%)                  6  (0.0%)         11,148,820  (7.4%)        2,786,244 (49.9%)         2,621,852 (50.0%)            /home/ferdinand/paralela/lab2/src/bucles_anidados.cpp
+
+>  10,240,984  (0.8%, 99.8%) 13 (0.4%, 1.4%)  8 (0.3%, 1.2%)         133  (0.0%, 99.8%)         68  (0.0%, 100.0%)         32  (0.0%, 100.0%)  6,062,086  (4.0%, 99.9%) 2,791,058 (50.0%, 100.0%) 2,625,307 (50.0%, 100.0%)  __memset_avx2_unaligned_erms:./string/../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S
+
+--------------------------------------------------------------------------------
+-- Annotated source file: ./string/../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S
+--------------------------------------------------------------------------------
+Unannotated because one or more of these original files are unreadable:
+- ./string/../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S
+
+--------------------------------------------------------------------------------
+-- Annotated source file: /home/ferdinand/paralela/lab2/src/bucles_anidados.cpp
+--------------------------------------------------------------------------------
+Ir_________________ I1mr____ ILmr____ Dr_________________ D1mr______________ DLmr______________ Dw________________ D1mw_____________ DLmw_____________ 
+
+-- line 3 ----------------------------------------
+          .         .        .                  .                  .                  .                  .                 .                 .          #include <vector>
+          .         .        .                  .                  .                  .                  .                 .                 .          #include <chrono>
+          .         .        .                  .                  .                  .                  .                 .                 .          #include <fstream>
+          .         .        .                  .                  .                  .                  .                 .                 .          #include <algorithm>
+          .         .        .                  .                  .                  .                  .                 .                 .          
+          .         .        .                  .                  .                  .                  .                 .                 .          using namespace std;
+          .         .        .                  .                  .                  .                  .                 .                 .          using namespace std::chrono;
+          .         .        .                  .                  .                  .                  .                 .                 .          
+         60  (0.0%) 4 (0.1%) 3 (0.1%)           8  (0.0%)          5  (0.0%)          2  (0.0%)         20  (0.0%)         0                 0          void inicializar(vector<double>& A, vector<double>& x, int n) {
+     30,736  (0.0%) 2 (0.1%) 2 (0.1%)           0                  0                  0                  0                 0                 0              for (int i = 0; i < n; i++) {
+    122,884  (0.0%) 6 (0.2%) 4 (0.1%)       7,680  (0.0%)          0                  0              7,680  (0.0%)       960  (0.0%)       410  (0.0%)          x[i] = 1.0 + (i % 5);
+167,162,904 (13.4%) 6 (0.2%) 5 (0.2%)           0                  0                  0                  0                 0                 0                  for (int j = 0; j < n; j++)
+ 66,846,720  (5.4%) 1 (0.0%) 1 (0.0%)           0                  0                  0         11,141,120  (7.4%) 2,785,284 (49.9%) 2,621,442 (49.9%)              A[i * n + j] = 1.0 + ((i + j) % 7);
+          .         .        .                  .                  .                  .                  .                 .                 .              }
+         24  (0.0%) 0        0                 24  (0.0%)          8  (0.0%)          4  (0.0%)          0                 0                 0          }
+          .         .        .                  .                  .                  .                  .                 .                 .          
+        120  (0.0%) 0        0                  0                  0                  0                 60  (0.0%)         0                 0          double porFilas(const vector<double>& A, const vector<double>& x, vector<double>& y, int n) {
+          .         .        .                  .                  .                  .                  .                 .                 .              fill(y.begin(), y.end(), 0.0);
+         24  (0.0%) 0        0                  0                  0                  0                 12  (0.0%)         0                 0              auto inicio = steady_clock::now();
+     92,208  (0.0%) 0        0                 12  (0.0%)          0                  0                  0                 0                 0              for (int i = 0; i < n; i++)
+200,540,160 (16.1%) 0        0                  0                  0                  0                  0                 0                 0                  for (int j = 0; j < n; j++)
+267,456,000 (21.4%) 3 (0.1%) 3 (0.1%) 133,716,480 (39.9%) 14,663,596 (18.0%)  7,866,603 (11.1%) 66,846,720 (44.2%)         0                 0                      y[i] += A[i * n + j] * x[j];
+         12  (0.0%) 0        0                  0                  0                  0                 12  (0.0%)        12  (0.0%)         6  (0.0%)      auto fin = steady_clock::now();
+          .         .        .                  .                  .                  .                  .                 .                 .              return duration<double>(fin - inicio).count();
+         72  (0.0%) 0        0                 72  (0.0%)         12  (0.0%)          6  (0.0%)          0                 0                 0          }
+          .         .        .                  .                  .                  .                  .                 .                 .          
+     69,240  (0.0%) 0        0                  0                  0                  0                 60  (0.0%)         0                 0          double porColumnas(const vector<double>& A, const vector<double>& x, vector<double>& y, int n) {
+          .         .        .                  .                  .                  .                  .                 .                 .              fill(y.begin(), y.end(), 0.0);
+         24  (0.0%) 1 (0.0%) 1 (0.0%)           0                  0                  0                 12  (0.0%)         0                 0              auto inicio = steady_clock::now();
+    115,332  (0.0%) 0        0                 36  (0.0%)         12  (0.0%)          6  (0.0%)          0                 0                 0              for (int j = 0; j < n; j++)
+267,386,880 (21.4%) 0        0                  0                  0                  0                  0                 0                 0                  for (int i = 0; i < n; i++)
+267,386,880 (21.4%) 1 (0.0%) 1 (0.0%) 200,540,160 (59.9%) 66,996,513 (82.0%) 62,934,609 (88.9%) 66,846,720 (44.2%)         0                 0                      y[i] += A[i * n + j] * x[j];
+         12  (0.0%) 0        0                  0                  0                  0                 12  (0.0%)        12  (0.0%)         6  (0.0%)      auto fin = steady_clock::now();
+          .         .        .                  .                  .                  .                  .                 .                 .              return duration<double>(fin - inicio).count();
+         72  (0.0%) 0        0                 72  (0.0%)         12  (0.0%)          6  (0.0%)          0                 0                 0          }
+          .         .        .                  .                  .                  .                  .                 .                 .          
+         11  (0.0%) 1 (0.0%) 1 (0.0%)           1  (0.0%)          0                  0                  7  (0.0%)         0                 0          int main() {
+          .         .        .                  .                  .                  .                  .                 .                 .              const int repeticiones = 3;
+          .         .        .                  .                  .                  .                  .                 .                 .              vector<int> tamanos = {512, 1024, 2048, 4096};
+          .         .        .                  .                  .                  .                  .                 .                 .          
+          6  (0.0%) 1 (0.0%) 1 (0.0%)           0                  0                  0                  2  (0.0%)         0                 0              ofstream csv("resultados/parte1_bucles.csv");
+          3  (0.0%) 0        0                  1  (0.0%)          0                  0                  1  (0.0%)         0                 0              csv << "n,iteraciones,tiempo_filas,tiempo_columnas,razon\n";
+          .         .        .                  .                  .                  .                  .                 .                 .          
+          .         .        .                  .                  .                  .                  .                 .                 .              cout << left << setw(8) << "n" << setw(16) << "iteraciones"
+          .         .        .                  .                  .                  .                  .                 .                 .                   << setw(14) << "filas(s)" << setw(14) << "columnas(s)"
+         15  (0.0%) 0        0                  0                  0                  0                  5  (0.0%)         0                 0                   << setw(10) << "razon" << endl;
+          .         .        .                  .                  .                  .                  .                 .                 .              cout << string(62, '-') << endl;
+          .         .        .                  .                  .                  .                  .                 .                 .          
+         31  (0.0%) 1 (0.0%) 1 (0.0%)          20  (0.0%)          3  (0.0%)          1  (0.0%)          1  (0.0%)         0                 0              for (int n : tamanos) {
+         16  (0.0%) 0        0                  0                  0                  0                  8  (0.0%)         0                 0                  vector<double> A((size_t)n * n), x(n), y(n);
+         28  (0.0%) 2 (0.1%) 1 (0.0%)           0                  0                  0                  4  (0.0%)         0                 0                  inicializar(A, x, n);
+          .         .        .                  .                  .                  .                  .                 .                 .          
+         12  (0.0%) 0        0                  4  (0.0%)          0                  0                  4  (0.0%)         0                 0                  double mejorFilas = 1e30, mejorCols = 1e30;
+         24  (0.0%) 0        0                  0                  0                  0                  0                 0                 0                  for (int r = 0; r < repeticiones; r++) {
+         84  (0.0%) 2 (0.1%) 1 (0.0%)          12  (0.0%)          0                  0                 24  (0.0%)         0                 0                      mejorFilas = min(mejorFilas, porFilas(A, x, y, n));
+         96  (0.0%) 0        0                 12  (0.0%)          0                  0                 24  (0.0%)         0                 0                      mejorCols  = min(mejorCols,  porColumnas(A, x, y, n));
+          .         .        .                  .                  .                  .                  .                 .                 .                  }
+         16  (0.0%) 0        0                  4  (0.0%)          0                  0                  8  (0.0%)         4  (0.0%)         2  (0.0%)          double razon = mejorCols / mejorFilas;
+          .         .        .                  .                  .                  .                  .                 .                 .          
+         20  (0.0%) 3 (0.1%) 2 (0.1%)           0                  0                  0                  4  (0.0%)         0                 0                  cout << left << setw(8) << n << setw(16) << (long long)n * n
+          .         .        .                  .                  .                  .                  .                 .                 .                       << setw(14) << fixed << setprecision(6) << mejorFilas
+          .         .        .                  .                  .                  .                  .                 .                 .                       << setw(14) << mejorCols
+          .         .        .                  .                  .                  .                  .                 .                 .                       << setw(10) << setprecision(2) << razon << "x" << endl;
+          .         .        .                  .                  .                  .                  .                 .                 .          
+         16  (0.0%) 0        0                  4  (0.0%)          0                  0                  4  (0.0%)         0                 0                  csv << n << "," << (long long)n * n << ","
+          .         .        .                  .                  .                  .                  .                 .                 .                      << setprecision(6) << mejorFilas << "," << mejorCols << ","
+          .         .        .                  .                  .                  .                  .                 .                 .                      << setprecision(3) << razon << "\n";
+          .         .        .                  .                  .                  .                  .                 .                 .              }
+          .         .        .                  .                  .                  .                  .                 .                 .          
+          3  (0.0%) 0        0                  1  (0.0%)          0                  0                  1  (0.0%)         0                 0              csv.close();
+          .         .        .                  .                  .                  .                  .                 .                 .              return 0;
+         14  (0.0%) 1 (0.0%) 1 (0.0%)           9  (0.0%)          1  (0.0%)          1  (0.0%)          1  (0.0%)         0                 0          
+
+--------------------------------------------------------------------------------
+-- Annotation summary
+--------------------------------------------------------------------------------
+Ir___________________ I1mr_________ ILmr_________ Dr_________________ D1mr_______________ DLmr_______________ Dw_________________ D1mw_____________ DLmw_____________ 
+
+1,237,210,759 (99.0%)    35  (1.2%)    28  (1.0%) 334,264,612 (99.8%) 81,660,162 (100.0%) 70,801,238 (100.0%) 144,842,526 (95.9%) 2,786,272 (49.9%) 2,621,866 (50.0%)    annotated: files known & above threshold & readable, line numbers known
+            0             0             0                   0                  0                   0                    0                 0                 0            annotated: files known & above threshold & readable, line numbers unknown
+            0             0             0                   0                  0                   0                    0                 0                 0          unannotated: files known & above threshold & two or more non-identical
+   10,240,984  (0.8%)    13  (0.4%)     8  (0.3%)         133  (0.0%)         68   (0.0%)         32   (0.0%)   6,062,086  (4.0%) 2,791,058 (50.0%) 2,625,307 (50.0%)  unannotated: files known & above threshold & unreadable 
+    1,944,841  (0.2%) 2,004 (66.3%) 1,856 (66.7%)     522,491  (0.2%)     13,201   (0.0%)      8,407   (0.0%)     184,650  (0.1%)     2,454  (0.0%)     1,588  (0.0%)  unannotated: files known & below threshold
+       53,100  (0.0%)   971 (32.1%)   892 (32.0%)      15,053  (0.0%)        607   (0.0%)        262   (0.0%)       7,868  (0.0%)       194  (0.0%)       144  (0.0%)  unannotated: files unknown
+

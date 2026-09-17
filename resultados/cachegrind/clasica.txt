@@ -1,0 +1,126 @@
+--------------------------------------------------------------------------------
+-- Metadata
+--------------------------------------------------------------------------------
+Invocation:       /usr/bin/cg_annotate resultados/cachegrind/cg_clasica.out
+I1 cache:         32768 B, 64 B, 8-way associative
+D1 cache:         49152 B, 64 B, 12-way associative
+LL cache:         31457280 B, 64 B, 15-way associative
+Command:          ./bin/mult_clasica 256
+Events recorded:  Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Events shown:     Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Event sort order: Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Threshold:        0.1%
+Annotation:       on
+
+--------------------------------------------------------------------------------
+-- Summary
+--------------------------------------------------------------------------------
+Ir_____________________ I1mr__________ ILmr__________ Dr____________________ D1mr__________________ DLmr__________ Dw_________________ D1mw______________ DLmw____________ 
+
+11,830,206,620 (100.0%) 2,998 (100.0%) 2,538 (100.0%) 3,360,184,158 (100.0%) 1,684,827,576 (100.0%) 7,974 (100.0%) 10,667,718 (100.0%) 3,472,060 (100.0%) 394,906 (100.0%)  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+-- File:function summary
+--------------------------------------------------------------------------------
+  Ir___________________________ I1mr___________ ILmr___________ Dr____________________________ D1mr__________________________ DLmr__________ Dw______________________ D1mw____________________ DLmw__________  file:function
+
+< 11,822,224,408 (99.9%, 99.9%) 30 (1.0%, 1.0%) 15 (0.6%, 0.6%) 3,359,637,645 (100.0%, 100.0%) 1,684,813,651 (100.0%, 100.0%) 1 (0.0%, 0.0%) 5,947,515 (55.8%, 55.8%) 2,478,100 (71.4%, 71.4%) 0 (0.0%, 0.0%)  /home/ferdinand/paralela/lab2/src/mult_clasica.cpp:
+  11,776,603,128 (99.5%)        13 (0.4%)        4 (0.2%)       3,359,637,544 (100.0%)         1,684,813,615 (100.0%)         0              1,982,499 (18.6%)        1,982,469 (57.1%)        0                 multiplicarClasica(std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> >&, int)
+      45,620,944  (0.4%)         3 (0.1%)        3 (0.1%)                  30   (0.0%)                    15   (0.0%)         1 (0.0%)       3,964,938 (37.2%)          495,626 (14.3%)        0                 inicializar(std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, int)
+
+--------------------------------------------------------------------------------
+-- Function:file summary
+--------------------------------------------------------------------------------
+  Ir___________________________ I1mr___________ ILmr__________ Dr____________________________ D1mr__________________________ DLmr__________ Dw______________________ D1mw____________________ DLmw__________  function:file
+
+> 11,776,603,203 (99.5%, 99.5%) 13 (0.4%, 0.4%) 4 (0.2%, 0.2%) 3,359,637,564 (100.0%, 100.0%) 1,684,813,625 (100.0%, 100.0%) 0 (0.0%, 0.0%) 1,982,504 (18.6%, 18.6%) 1,982,469 (57.1%, 57.1%) 0 (0.0%, 0.0%)  multiplicarClasica(std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> >&, int):
+  11,776,603,128 (99.5%)        13 (0.4%)       4 (0.2%)       3,359,637,544 (100.0%)         1,684,813,615 (100.0%)         0              1,982,499 (18.6%)        1,982,469 (57.1%)        0                 /home/ferdinand/paralela/lab2/src/mult_clasica.cpp
+
+>     45,620,959  (0.4%, 99.9%)  3 (0.1%, 0.5%) 3 (0.1%, 0.3%)            30   (0.0%, 100.0%)            15   (0.0%, 100.0%) 1 (0.0%, 0.0%) 3,964,938 (37.2%, 55.8%)   495,626 (14.3%, 71.4%) 0 (0.0%, 0.0%)  inicializar(std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, int):
+      45,620,944  (0.4%)         3 (0.1%)       3 (0.1%)                  30   (0.0%)                    15   (0.0%)         1 (0.0%)       3,964,938 (37.2%)          495,626 (14.3%)        0                 /home/ferdinand/paralela/lab2/src/mult_clasica.cpp
+
+--------------------------------------------------------------------------------
+-- Annotated source file: /home/ferdinand/paralela/lab2/src/mult_clasica.cpp
+--------------------------------------------------------------------------------
+Ir___________________ I1mr____ ILmr____ Dr____________________ D1mr__________________ DLmr____ Dw_______________ D1mw_____________ DLmw 
+
+-- line 3 ----------------------------------------
+            .         .        .                    .                      .          .                .                 .            .  #include <vector>
+            .         .        .                    .                      .          .                .                 .            .  #include <chrono>
+            .         .        .                    .                      .          .                .                 .            .  #include <fstream>
+            .         .        .                    .                      .          .                .                 .            .  #include <algorithm>
+            .         .        .                    .                      .          .                .                 .            .  
+            .         .        .                    .                      .          .                .                 .            .  using namespace std;
+            .         .        .                    .                      .          .                .                 .            .  using namespace std::chrono;
+            .         .        .                    .                      .          .                .                 .            .  
+        8,099  (0.0%) 2 (0.1%) 2 (0.1%)            10   (0.0%)             5   (0.0%) 0               10  (0.0%)         0            0  void inicializar(vector<double>& A, vector<double>& B, int n) {
+       16,153  (0.0%) 0        0                    5   (0.0%)             5   (0.0%) 1 (0.0%)         0                 0            0      for (int i = 0; i < n; i++)
+    5,947,392  (0.1%) 0        0                    0                      0          0                0                 0            0          for (int j = 0; j < n; j++) {
+   19,824,640  (0.2%) 1 (0.0%) 1 (0.0%)             0                      0          0        1,982,464 (18.6%)   247,813  (7.1%)    0              A[i * n + j] = 1.0 + ((i + j) % 9);
+   19,824,645  (0.2%) 0        0                    0                      0          0        1,982,464 (18.6%)   247,813  (7.1%)    0              B[i * n + j] = 1.0 + ((i * 2 + j) % 5);
+            .         .        .                    .                      .          .                .                 .            .          }
+           15  (0.0%) 0        0                   15   (0.0%)             5   (0.0%) 0                0                 0            0  }
+            .         .        .                    .                      .          .                .                 .            .  
+    3,964,978  (0.0%) 5 (0.2%) 1 (0.0%)             0                      0          0               25  (0.0%)         0            0  double multiplicarClasica(const vector<double>& A, const vector<double>& B, vector<double>& C, int n) {
+            .         .        .                    .                      .          .                .                 .            .      fill(C.begin(), C.end(), 0.0);
+           10  (0.0%) 0        0                    0                      0          0                5  (0.0%)         0            0      auto inicio = steady_clock::now();
+       21,529  (0.0%) 3 (0.1%) 2 (0.1%)            10   (0.0%)            10   (0.0%) 0                0                 0            0      for (int i = 0; i < n; i++) {
+    7,932,544  (0.1%) 0        0                    0                      0          0                0                 0            0          for (int j = 0; j < n; j++) {
+    3,970,304  (0.0%) 0        0                    0                      0          0                0                 0            0              double suma = 0.0;
+6,719,275,008 (56.8%) 0        0                    0                      0          0                0                 0            0              for (int k = 0; k < n; k++)
+5,039,456,256 (42.6%) 5 (0.2%) 1 (0.0%) 3,359,637,504 (100.0%) 1,684,813,605 (100.0%) 0                0                 0            0                  suma += A[i * n + k] * B[k * n + j];
+    1,982,464  (0.0%) 0        0                    0                      0          0        1,982,464 (18.6%) 1,982,464 (57.1%)    0              C[i * n + j] = suma;
+            .         .        .                    .                      .          .                .                 .            .          }
+            .         .        .                    .                      .          .                .                 .            .      }
+            5  (0.0%) 0        0                    0                      0          0                5  (0.0%)         5  (0.0%)    0      auto fin = steady_clock::now();
+            .         .        .                    .                      .          .                .                 .            .      return duration<double>(fin - inicio).count();
+           30  (0.0%) 0        0                   30   (0.0%)             0          0                0                 0            0  }
+            .         .        .                    .                      .          .                .                 .            .  
+           11  (0.0%) 2 (0.1%) 2 (0.1%)             1   (0.0%)             0          0                7  (0.0%)         0            0  int main() {
+            .         .        .                    .                      .          .                .                 .            .      vector<int> tamanos = {128, 256, 512, 768, 1024};
+            .         .        .                    .                      .          .                .                 .            .  
+            6  (0.0%) 1 (0.0%) 1 (0.0%)             0                      0          0                2  (0.0%)         0            0      ofstream csv("resultados/parte2_clasica.csv");
+            3  (0.0%) 0        0                    1   (0.0%)             0          0                1  (0.0%)         0            0      csv << "n,operaciones,tiempo,gflops,factor\n";
+            .         .        .                    .                      .          .                .                 .            .  
+            .         .        .                    .                      .          .                .                 .            .      cout << left << setw(8) << "n" << setw(16) << "operaciones"
+            .         .        .                    .                      .          .                .                 .            .           << setw(14) << "tiempo(s)" << setw(12) << "gflops"
+           15  (0.0%) 0        0                    0                      0          0                5  (0.0%)         0            0           << setw(10) << "factor" << endl;
+            .         .        .                    .                      .          .                .                 .            .      cout << string(60, '-') << endl;
+            .         .        .                    .                      .          .                .                 .            .  
+            1  (0.0%) 0        0                    0                      0          0                1  (0.0%)         0            0      double anterior = 0.0;
+           48  (0.0%) 3 (0.1%) 0                   29   (0.0%)             4   (0.0%) 0                5  (0.0%)         0            0      for (int n : tamanos) {
+            5  (0.0%) 0        0                    0                      0          0                0                 0            0          vector<double> A((size_t)n * n), B((size_t)n * n), C((size_t)n * n);
+           40  (0.0%) 2 (0.1%) 1 (0.0%)             0                      0          0               15  (0.0%)         0            0          inicializar(A, B, n);
+            .         .        .                    .                      .          .                .                 .            .  
+           40  (0.0%) 0        0                   10   (0.0%)             5   (0.0%) 0               15  (0.0%)         5  (0.0%)    0          double tiempo = multiplicarClasica(A, B, C, n);
+           40  (0.0%) 1 (0.0%) 1 (0.0%)             0                      0          0                5  (0.0%)         0            0          double operaciones = 2.0 * n * n * n;
+           20  (0.0%) 0        0                    5   (0.0%)             0          0                5  (0.0%)         0            0          double gflops = operaciones / (tiempo * 1e9);
+           30  (0.0%) 3 (0.1%) 2 (0.1%)             5   (0.0%)             5   (0.0%) 0                5  (0.0%)         0            0          double factor = (anterior > 0.0) ? tiempo / anterior : 0.0;
+            .         .        .                    .                      .          .                .                 .            .  
+           20  (0.0%) 0        0                    0                      0          0                5  (0.0%)         0            0          cout << left << setw(8) << n << setw(16) << scientific
+            .         .        .                    .                      .          .                .                 .            .               << setprecision(2) << operaciones
+            .         .        .                    .                      .          .                .                 .            .               << setw(14) << fixed << setprecision(6) << tiempo
+            .         .        .                    .                      .          .                .                 .            .               << setw(12) << setprecision(3) << gflops;
+           20  (0.0%) 0        0                    5   (0.0%)             0          0                0                 0            0          if (factor > 0.0) cout << setw(10) << setprecision(2) << factor << "x";
+            .         .        .                    .                      .          .                .                 .            .          cout << endl;
+            .         .        .                    .                      .          .                .                 .            .  
+           20  (0.0%) 0        0                    5   (0.0%)             5   (0.0%) 0                5  (0.0%)         0            0          csv << n << "," << operaciones << "," << tiempo << "," << gflops << "," << factor << "\n";
+            .         .        .                    .                      .          .                .                 .            .          anterior = tiempo;
+            .         .        .                    .                      .          .                .                 .            .      }
+            .         .        .                    .                      .          .                .                 .            .  
+            3  (0.0%) 2 (0.1%) 1 (0.0%)             1   (0.0%)             0          0                1  (0.0%)         0            0      csv.close();
+            .         .        .                    .                      .          .                .                 .            .      return 0;
+           14  (0.0%) 0        0                    9   (0.0%)             2   (0.0%) 0                1  (0.0%)         0            0  
+
+--------------------------------------------------------------------------------
+-- Annotation summary
+--------------------------------------------------------------------------------
+Ir____________________ I1mr_________ ILmr_________ Dr____________________ D1mr__________________ DLmr_________ Dw_______________ D1mw_____________ DLmw____________ 
+
+11,822,224,408 (99.9%)    30  (1.0%)    15  (0.6%) 3,359,637,645 (100.0%) 1,684,813,651 (100.0%)     1  (0.0%) 5,947,515 (55.8%) 2,478,100 (71.4%)       0             annotated: files known & above threshold & readable, line numbers known
+             0             0             0                     0                      0              0                 0                 0               0             annotated: files known & above threshold & readable, line numbers unknown
+             0             0             0                     0                      0              0                 0                 0               0           unannotated: files known & above threshold & two or more non-identical
+             0             0             0                     0                      0              0                 0                 0               0           unannotated: files known & above threshold & unreadable 
+     7,924,221  (0.1%) 2,046 (68.2%) 1,748 (68.9%)       530,002   (0.0%)        13,330   (0.0%) 7,949 (99.7%) 4,711,334 (44.2%)   993,778 (28.6%) 394,791 (100.0%)  unannotated: files known & below threshold
+        57,991  (0.0%)   922 (30.8%)   775 (30.5%)        16,511   (0.0%)           595   (0.0%)    24  (0.3%)     8,869  (0.1%)       182  (0.0%)     115   (0.0%)  unannotated: files unknown
+
